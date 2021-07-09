@@ -1,6 +1,18 @@
-<form method="post" encrypt="multipart/form-data"> 
-  <label for="explorer">Explorer:</label><br>
-  <input id="explorer" type="file" accept="image/*"></br>
-  <label for="camera">Camera:</label><br>
-  <input id="camera" type="file" accept="image/*" capture>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <style>
+    input {
+     width: 50%;
+    }
+    </style>
+  </head>
+  <body>
+    <form method="post" encrypt="multipart/form-data">
+      <input type = "button" onclick = 'window.webkit.messageHandlers.doStuffMessageHandler.postMessage({ type: "camera" })' value = "Camera">
+      <input type = "button" onclick = 'window.webkit.messageHandlers.doStuffMessageHandler.postMessage({ type: "photo_library" })' value = "Photo Library">
+      <input type = "button" onclick = 'window.webkit.messageHandlers.doStuffMessageHandler.postMessage({ type: "files" })' value = "Files">
+    </form>
+  </body>
+</html>
